@@ -19,19 +19,30 @@ namespace ConsoleApp1
             
             Console.Write("Hvad hedder vejen dit hus ligger på:");
             string vej = Console.ReadLine();
+
+            Console.Write("Hvad hedder vejen dit hus ligger på:");
+            int husNummer = Convert.ToInt32(Console.ReadLine());
             
+            Console.Write("Hvilken by bor du i?: ");
+            string by = Console.ReadLine();
+
+            Console.Write("Hvad er dit postnummer?: ");
+            int postNummer = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("----------------------------------\n");
+
             Adresse husAdresse = new Adresse();
             husAdresse.setVej(vej);
+            husAdresse.setNummer(husNummer);
+            husAdresse.setBy(by);
+            husAdresse.setPostnummer(postNummer);
             
             Hus mitHus = new Hus();
             mitHus.setM2(m2);
-
-
+            mitHus.setAge(år);
 
             mitHus.setAdresse(husAdresse);
             
             mitHus.printInfoOmHus();
-
 
             Console.ReadLine();
         }

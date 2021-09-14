@@ -9,12 +9,16 @@ namespace ConsoleApp1
     public class Hus
     {
         private int m2;
-        private int byggeÅr;
+        private int alder;
         private Adresse adressen = new Adresse();
 
+        public void setAge(int byggeår)
+        {
+            this.alder = 2021 - byggeår;
+        }
         public void setM2(int m2)
         {
-            if (m2 < 0)
+            if (m2 > 0)
             {
                 this.m2 = m2;
             }
@@ -35,8 +39,10 @@ namespace ConsoleApp1
 
         public void printInfoOmHus()
         {
-          
-            Console.WriteLine("Størrelsen på mit hus er på: " + m2 + " og adressen er: " + adressen.getVej() + " " + adressen.getNummer() );
+            Console.WriteLine($"Størrelsen på mit hus er: {m2} m2");
+            Console.WriteLine($"Adressen er: {adressen.getVej()} {adressen.getNummer()} {adressen.getPostnummer()} {adressen.getBy()}");
+            Console.WriteLine($"Det er {alder} år gamelt");
+            Console.WriteLine("----------------------------------\n");
         }
 
     }
