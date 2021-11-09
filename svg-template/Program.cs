@@ -36,9 +36,9 @@ namespace svg_template
             Output:
                 -str, svg code describing a circle
             */
-            string cx = "cx=\"" + Convert.ToString(x) + "\"";
-            string cy = "cy=\"" + Convert.ToString(y) + "\"";
-            string rad = "r=\"" + Convert.ToString(radius) + "\"";
+            string cx = "cx=\"" + x.ToString() + "\"";
+            string cy = "cy=\"" + y.ToString() + "\"";
+            string rad = "r=\"" + radius.ToString() + "\"";
             return "<circle " + cx + " " + cy + " " + rad + " " + style + "/>";
         }
 
