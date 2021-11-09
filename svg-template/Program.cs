@@ -42,6 +42,24 @@ namespace svg_template
             return "<circle " + cx + " " + cy + " " + rad + " " + style + "/>";
         }
 
+        private string draw_rectangle(int x, int y, int width, int height)
+        {
+            /*
+             Creates svg code for drawing a circle.
+            Input:
+                -x: int, x-coordinate of the center of the circle in pixels
+                - y: int, y-coordinate of the center of the circle in pixels
+                - radius: int, radius of the circle in pixels
+            Output:
+                -str, svg code describing a circle
+            */
+            string rx = "x=\"" + x.ToString() + "\"";
+            string ry = "y=\"" + y.ToString() + "\"";
+            string rw = "width=\"" + width.ToString() + "\"";
+            string rh = "height=\"" + height.ToString() + "\"";
+            return "<rect " + rx + " " + ry + " " + rw + " " + rh + " " + style + "/>";
+        }
+        
         private void save(string svg, string filename)
         {
             using (StreamWriter sw = new StreamWriter(filename))
@@ -53,9 +71,8 @@ namespace svg_template
         {
             Artist leo = new Artist();
             string shapes = "";
-            shapes = shapes + leo.draw_circle(350, 220, 200);
-            shapes = shapes + leo.draw_circle(220, 220, 100);
-            shapes = shapes + leo.draw_circle(150, 150, 150);
+            shapes += leo.draw_circle(350, 220, 200);
+            shapes += leo.draw_rectangle(200, 100, 50, 150);
 
             string drawing = leo.draw_svg(500, 500, shapes);
             leo.save(drawing, @"test.svg");
