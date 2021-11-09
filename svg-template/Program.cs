@@ -53,8 +53,9 @@ namespace svg_template
         {
             Artist leo = new Artist();
             string shapes = "";
-            shapes = shapes + leo.draw_circle(220, 220, 200);
-            shapes = shapes + leo.draw_circle(220, 220, 180);
+            shapes = shapes + leo.draw_circle(350, 220, 200);
+            shapes = shapes + leo.draw_circle(220, 220, 100);
+            shapes = shapes + leo.draw_circle(150, 150, 150);
 
             string drawing = leo.draw_svg(500, 500, shapes);
             leo.save(drawing, @"test.svg");
