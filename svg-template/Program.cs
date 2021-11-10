@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Security.Cryptography;
 
@@ -6,7 +7,7 @@ namespace svg_template
 {
     class Artist
     {
-        public string style = "stroke=\"black\" stroke-width=\"1px\" fill=\"#00fffb\" opacity=\"0.3\"";
+        public string style = "stroke=\"black\" stroke-width=\"1px\" opacity=\"0.8\"";
 
         private string draw_svg(int width, int height, string shapes)
         {
@@ -26,7 +27,7 @@ namespace svg_template
             return header + shapes + footer;
         }
 
-        private string draw_circle(int x, int y, double radius)
+        private string draw_circle(int x, int y, double radius, string color)
         {
             /*
              Creates svg code for drawing a circle.
@@ -40,10 +41,9 @@ namespace svg_template
             string cx = "cx=\"" + x.ToString() + "\"";
             string cy = "cy=\"" + y.ToString() + "\"";
             string rad = "r=\"" + radius.ToString() + "\"";
-            return "<circle " + cx + " " + cy + " " + rad + " " + style + "/>";
-        }
-
-        private string draw_rectangle(int x, int y, int width, int height)
+            return "<circle " + cx + " " + cy + " " + rad + " " + "fill=\"#" + color + "\" " + style + "/>"; }
+        
+        private string draw_rectangle(int x, int y, int width, int height, string color)
         {
             /*
              Creates svg code for drawing a circle.
@@ -58,10 +58,10 @@ namespace svg_template
             string ry = "y=\"" + y.ToString() + "\"";
             string rw = "width=\"" + width.ToString() + "\"";
             string rh = "height=\"" + height.ToString() + "\"";
-            return "<rect " + rx + " " + ry + " " + rw + " " + rh + " " + style + "/>";
+            return "<rect " + rx + " " + ry + " " + rw + " " + rh + " " + "fill=\"#" + color + "\" " + style + "/>";
         }
         
-        private string draw_triangle(int[] p1, int[] p2, int[] p3){
+        private string draw_triangle(int[] p1, int[] p2, int[] p3, string color){
             /*
              Creates svg code for drawing a circle.
             Input:
@@ -74,7 +74,7 @@ namespace svg_template
             string points = "points=\"" + p1[0].ToString() + "," + p1[1].ToString() + " ";
             points += p2[0].ToString() + "," + p2[1].ToString() + " ";
             points += p3[0].ToString() + "," + p3[1].ToString() + "\" ";
-            return "<polygon " + points + style + "/>";
+            return "<polygon " + points + " " + "fill=\"#" + color + "\" " + style + "/>";
         }
         
         private void save(string svg, string filename)
@@ -88,11 +88,11 @@ namespace svg_template
         {
             Artist leo = new Artist();
             string shapes = "";
-            shapes += leo.draw_circle(350, 220, 200);
-            shapes += leo.draw_rectangle(200, 100, 50, 150);
-            shapes += leo.draw_triangle(new int [] {4, 5}, new []{50, 100}, new []{100, 100});
+            shapes += leo.draw_circle(350, 220, 200, "000000");
+            shapes += leo.draw_rectangle(200, 100, 50, 150, "00AAFF");
+            shapes += leo.draw_triangle(new int [] {4, 5}, new []{50, 100}, new []{100, 100}, "FF0000");
 
-            string drawing = leo.draw_svg(500, 500, shapes);
+            string drawing = leo.draw_svg(800, 500, shapes);
             leo.save(drawing, @"test.svg");
         }
     }
