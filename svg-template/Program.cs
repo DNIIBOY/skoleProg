@@ -45,15 +45,6 @@ namespace svg_template
         
         private string draw_rectangle(int x, int y, int width, int height, string color)
         {
-            /*
-             Creates svg code for drawing a circle.
-            Input:
-                -x: int, x-coordinate of the center of the circle in pixels
-                - y: int, y-coordinate of the center of the circle in pixels
-                - radius: int, radius of the circle in pixels
-            Output:
-                -str, svg code describing a circle
-            */
             string rx = "x=\"" + x.ToString() + "\"";
             string ry = "y=\"" + y.ToString() + "\"";
             string rw = "width=\"" + width.ToString() + "\"";
@@ -62,15 +53,6 @@ namespace svg_template
         }
         
         private string draw_triangle(int[] p1, int[] p2, int[] p3, string color){
-            /*
-             Creates svg code for drawing a circle.
-            Input:
-                -x: int, x-coordinate of the center of the circle in pixels
-                - y: int, y-coordinate of the center of the circle in pixels
-                - radius: int, radius of the circle in pixels
-            Output:
-                -str, svg code describing a circle
-            */
             string points = "points=\"" + p1[0].ToString() + "," + p1[1].ToString() + " ";
             points += p2[0].ToString() + "," + p2[1].ToString() + " ";
             points += p3[0].ToString() + "," + p3[1].ToString() + "\" ";
@@ -90,7 +72,7 @@ namespace svg_template
             string shapes = "";
             shapes += leo.draw_circle(350, 220, 200, "000000");
             shapes += leo.draw_rectangle(200, 100, 50, 150, "00AAFF");
-            shapes += leo.draw_triangle(new int [] {4, 5}, new []{50, 100}, new []{100, 100}, "FF0000");
+            shapes += leo.draw_triangle(new int [] {250, 50}, new []{500, 100}, new []{350, 450}, "FF0000");
 
             string drawing = leo.draw_svg(800, 500, shapes);
             leo.save(drawing, @"test.svg");
