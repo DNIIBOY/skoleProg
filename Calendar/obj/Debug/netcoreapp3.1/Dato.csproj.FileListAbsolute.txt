@@ -58,3 +58,23 @@ C:\Users\ANDJ\OneDrive - Herningsholm Erhvervsskole\Programmering C#\Filhåndter
 C:\Users\ANDJ\OneDrive - Herningsholm Erhvervsskole\Programmering C#\Filhåndtering og Trinvis forbedring\Calendar\Calendar\obj\Debug\netcoreapp3.1\Dato.dll
 C:\Users\ANDJ\OneDrive - Herningsholm Erhvervsskole\Programmering C#\Filhåndtering og Trinvis forbedring\Calendar\Calendar\obj\Debug\netcoreapp3.1\Dato.pdb
 C:\Users\ANDJ\OneDrive - Herningsholm Erhvervsskole\Programmering C#\Filhåndtering og Trinvis forbedring\Calendar\Calendar\obj\Debug\netcoreapp3.1\Dato.genruntimeconfig.cache
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\bin\Debug\netcoreapp3.1\Dato.exe
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\bin\Debug\netcoreapp3.1\Dato.deps.json
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\bin\Debug\netcoreapp3.1\Dato.runtimeconfig.json
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\bin\Debug\netcoreapp3.1\Dato.runtimeconfig.dev.json
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\bin\Debug\netcoreapp3.1\Dato.dll
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\bin\Debug\netcoreapp3.1\Dato.pdb
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\obj\Debug\netcoreapp3.1\Dato.csproj.AssemblyReference.cache
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\obj\Debug\netcoreapp3.1\Dato_MarkupCompile.cache
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\obj\Debug\netcoreapp3.1\Dato_MarkupCompile.lref
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\obj\Debug\netcoreapp3.1\Dato.g.resources
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\obj\Debug\netcoreapp3.1\Dato.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\obj\Debug\netcoreapp3.1\Dato.AssemblyInfoInputs.cache
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\obj\Debug\netcoreapp3.1\Dato.AssemblyInfo.cs
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\obj\Debug\netcoreapp3.1\Dato.csproj.CoreCompileInputs.cache
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\obj\Debug\netcoreapp3.1\Dato.dll
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\obj\Debug\netcoreapp3.1\Dato.pdb
+C:\Users\danie\Desktop\programmering\skoleProg\Calendar\obj\Debug\netcoreapp3.1\Dato.genruntimeconfig.cache

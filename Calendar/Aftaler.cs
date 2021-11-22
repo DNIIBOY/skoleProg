@@ -22,7 +22,15 @@ namespace Dato
                     aftaler += "\n" + s;
                 }
             }
-            return aftaler;
+
+            string events = "";
+            foreach (string line in aftaler.Split('\n'))
+            {
+                if (line.Split(";")[0] == date.ToString("dd-MM-yyyy")){
+                    events += line + "\n";
+                }
+            }
+            return events;
         }
 
         public void Save(DateTime date)
