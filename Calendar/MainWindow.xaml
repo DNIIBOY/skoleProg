@@ -23,11 +23,11 @@
         <Button Content="Forrige" HorizontalAlignment="Left" Margin="186,32,0,0" VerticalAlignment="Top" Height="25" Width="72" Click="Button_Click_prev" Grid.Column="1"/>
         <Button Content="Næste" HorizontalAlignment="Left" Margin="272,31,0,0" VerticalAlignment="Top" Height="25" Width="70" Click="Button_Click_next" Grid.Column="1" Grid.ColumnSpan="2"/>
         <Label x:Name="MyDate" Content="24-10-2021" HorizontalAlignment="Left" Height="47" Margin="15,20,0,0" VerticalAlignment="Top" Width="159" FontSize="24" Grid.Column="1"/>
-        <TextBox HorizontalAlignment="Left" Height="19" Margin="22,133,0,0" Text="Tidspunkt" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" Grid.Column="1"/>
-        <TextBox HorizontalAlignment="Left" Height="19" Margin="105,133,0,0" Text="Aftale" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox Name="tidField" HorizontalAlignment="Left" Height="19" Margin="22,133,0,0" Text="Tidspunkt" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" Grid.Column="1"/>
+        <TextBox Name="aftaleField" HorizontalAlignment="Left" Height="19" Margin="105,133,0,0" Text="Aftale" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" Grid.Column="1" Grid.ColumnSpan="2"/>
         <Button Content="(Re)load" HorizontalAlignment="Left" Margin="18,75,0,0" VerticalAlignment="Top" Height="25" Width="72" Click="Button_Click_load" Grid.Column="1"/>
         <Button Content="Save" HorizontalAlignment="Left" Margin="102,75,0,0" VerticalAlignment="Top" Height="25" Width="72" Click="Button_Click_save" Grid.Column="1"/>
         <TextBox x:Name="liste_af_aftaler" Grid.Column="1" HorizontalAlignment="Left" Margin="21,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="323" Height="132" Grid.ColumnSpan="2"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="361,0,0,0" Text="Kære dagbog" TextWrapping="Wrap" VerticalAlignment="Center" Width="318" Height="295" Grid.ColumnSpan="2"/>
+        <TextBox Name="dagbogField" Grid.Column="1" HorizontalAlignment="Left" Margin="361,0,0,0" Text="Kære dagbog" TextWrapping="Wrap" VerticalAlignment="Center" Width="318" Height="295" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

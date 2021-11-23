@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.IO;
 
 namespace Dato
 {
@@ -20,10 +9,9 @@ namespace Dato
     /// </summary>
     public partial class MainWindow : Window
     {
-        public DateTime date = new DateTime(2021, 11, 22);
+        public DateTime date = DateTime.Today;
         public Aftaler aftaler = new Aftaler();
-        public MainWindow()
-        {
+        public MainWindow(){
             InitializeComponent();
             MyDate.Content = date.ToShortDateString();
         }
@@ -34,6 +22,7 @@ namespace Dato
             date = date.AddDays(1);
             MyDate.Content = date.ToShortDateString();
             liste_af_aftaler.Text = aftaler.Load(date);
+            dagbogField.Text = aftaler.LoadDagbog(date);
         }
 
         private void Button_Click_prev(object sender, RoutedEventArgs e)
@@ -42,11 +31,12 @@ namespace Dato
             date = date.AddDays(-1);
             MyDate.Content = date.ToShortDateString();
             liste_af_aftaler.Text = aftaler.Load(date);
+            dagbogField.Text = aftaler.LoadDagbog(date);
         }
 
         private void Button_Click_save(object sender, RoutedEventArgs e)
         {
-            aftaler.Save(date);
+            aftaler.Save(date, tidField.Text, aftaleField.Text, dagbogField.Text);
         }
 
         private void Button_Click_load(object sender, RoutedEventArgs e)

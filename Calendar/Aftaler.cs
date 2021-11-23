@@ -12,30 +12,37 @@ namespace Dato
             String path = @"aftaler.csv";
             String aftaler = "";
 
-            using (StreamReader sr = new StreamReader(path, System.Text.Encoding.GetEncoding("iso-8859-1")))
-            {
+            using (StreamReader sr = new StreamReader(path, System.Text.Encoding.GetEncoding("iso-8859-1"))){
                 String s = "";
-                aftaler += sr.ReadLine();
-
-                while ((s = sr.ReadLine()) != null)
-                {
-                    aftaler += "\n" + s;
+                while ((s = sr.ReadLine()) != null){
+                    if (s.Split(";")[0] == date.ToString("dd-MM-yyyy")){
+                        aftaler += s + "\n";
+                    }
                 }
+                return aftaler;
             }
-
-            string events = "";
-            foreach (string line in aftaler.Split('\n'))
-            {
-                if (line.Split(";")[0] == date.ToString("dd-MM-yyyy")){
-                    events += line + "\n";
-                }
-            }
-            return events;
         }
 
-        public void Save(DateTime date)
-        {
-            //Din kode skal stå her.
+        public string LoadDagbog(DateTime date){
+            string dateString = date.ToString("dd-MM-yyyy");
+            if (!(File.Exists(dateString + ".txt"))){
+                return "Kære Dagbog";
+            }
+            else{
+                return File.ReadAllText(dateString + ".txt");
+            }
+        }
+
+        public void Save(DateTime date, string tidspunkt, string aftale, string dagbog){
+            String path = @"aftaler.csv";
+            using (StreamWriter sw = File.AppendText(path)){
+                sw.WriteLine($"{date.ToString("dd-MM-yyyy")};{tidspunkt};{aftale}");
+            }
+            
+            string dateString = date.ToString("dd-MM-yyyy") + ".txt";
+            using (StreamWriter sw = File.CreateText(dateString)){
+                sw.WriteLine(dagbog);
+            }
         }
     }
 }
