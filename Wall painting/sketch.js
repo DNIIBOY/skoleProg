@@ -1,10 +1,11 @@
 // TODO: Create setup() function
 
-  // Inside the setup() function:
-  // TODO: Create canvas 500px wide and 500px high
-
-  // TODO: Draw horizontal and vertical guidelines
-
+function setup(){
+	createCanvas(500, 500);
+	background(220);
+	line(width/2, 0, width/2, height);
+	line(0, height/2, width, height/2);
+}
 
 
 // TODO: Create wall drawing inside draw() function
