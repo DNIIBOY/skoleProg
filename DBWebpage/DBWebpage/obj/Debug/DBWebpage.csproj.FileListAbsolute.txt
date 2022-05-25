@@ -69,3 +69,12 @@ C:\Users\danie\Desktop\programmering\skoleProg\DBWebpage\DBWebpage\bin\roslyn\Sy
 C:\Users\danie\Desktop\programmering\skoleProg\DBWebpage\DBWebpage\bin\roslyn\System.Xml.XPath.dll
 C:\Users\danie\Desktop\programmering\skoleProg\DBWebpage\DBWebpage\bin\roslyn\System.Xml.XPath.XDocument.dll
 C:\Users\danie\Desktop\programmering\skoleProg\DBWebpage\DBWebpage\bin\roslyn\vbc.exe
+C:\Users\danie\Desktop\programmering\skoleProg\DBWebpage\DBWebpage\bin\DBWebpage.dll.config
+C:\Users\danie\Desktop\programmering\skoleProg\DBWebpage\DBWebpage\bin\roslyn\vbc.exe.config
+C:\Users\danie\Desktop\programmering\skoleProg\DBWebpage\DBWebpage\bin\roslyn\vbc.rsp
+C:\Users\danie\Desktop\programmering\skoleProg\DBWebpage\DBWebpage\bin\roslyn\VBCSCompiler.exe
+C:\Users\danie\Desktop\programmering\skoleProg\DBWebpage\DBWebpage\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\danie\Desktop\programmering\skoleProg\DBWebpage\DBWebpage\bin\EntityFramework.dll
+C:\Users\danie\Desktop\programmering\skoleProg\DBWebpage\DBWebpage\bin\EntityFramework.SqlServer.dll
+C:\Users\danie\Desktop\programmering\skoleProg\DBWebpage\DBWebpage\bin\EntityFramework.xml
+C:\Users\danie\Desktop\programmering\skoleProg\DBWebpage\DBWebpage\bin\EntityFramework.SqlServer.xml
