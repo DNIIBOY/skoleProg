@@ -10,6 +10,8 @@ namespace DBWebpage.Controllers
     {
         public ActionResult Index()
         {
+            List < Person > personList = new List<Person>();
+            List < Forening > foreningList = new List<Forening>();
             return View();
         }
 
