@@ -5,7 +5,7 @@ using System.Web;
 
 namespace DBWebpage.Models
 {
-    public class ForeningDB
+    public class Forening
     {
         public int ID { get; set; }
         public string firstName { get; set; }
