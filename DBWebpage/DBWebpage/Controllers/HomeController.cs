@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DBWebpage.Models;
 
 namespace DBWebpage.Controllers
 {
@@ -12,6 +13,12 @@ namespace DBWebpage.Controllers
         {
             List < Person > personList = new List<Person>();
             List < Forening > foreningList = new List<Forening>();
+
+
+            using (ForeningEntities entity = new ForeningEntities())
+            {
+
+            }
             return View();
         }
 
