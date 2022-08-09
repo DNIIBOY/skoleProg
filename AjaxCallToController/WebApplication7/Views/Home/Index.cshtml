@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<button id="btn1">Click me</button>
+<div id="test1"></div>
+
+<input type="text" id="txtName" />
+<input type="button" id="btnGet" value="Get Current Time" />
+
+@*De 2 nederste skal opdateres - ajax skal installeres - HUUSK at bruge de rigtige dimension *@
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>     @*HUUUUSK*@
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>   @*huuuuuusk*@
+
+<script type="text/javascript">
+
+    $(function () {
+        $('#btn1').on('click', function () {
+            var url = "/Home/getInfo";
+            var firstname = "Henrik";
+            var lastname = "Hansen";
+            $("#test1").html( "hej ");
+        })
+    })
+
+    $("#btnGet").click(function () {
+        $.ajax({
+            type: "POST",
+            url: "/Home/AjaxMethod",
+            data: '{name: "' + $("#txtName").val() + '" }',    /*name er også navnet på variablen controllermetoden modtager !!*/
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                alert("Hello: " + response.fornavn +
+                    " .\nCurrent Date and Time: " + response.dato);
+            },
+            failure: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+    });
+
+
+
+</script>
+
+
+

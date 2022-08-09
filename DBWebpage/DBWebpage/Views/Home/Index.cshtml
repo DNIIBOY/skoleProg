@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DBWebpage.Models.Forening>
+﻿@model IEnumerable<DBWebpage.Models.Person>
 
 @{
     ViewBag.Title = "Home Page";
@@ -26,16 +26,16 @@
             {
         <tr>
             <td>
-                @item.Fornavn
+                @item.firstName
             </td>
             <td>
-                @item.Efternavn
+                @item.lastName
             </td>
             <td>
-                @item.Alder
+                @item.age
             </td>
             <td>
-                @item.Byen
+                @item.CityID
             </td>
         </tr>
             }

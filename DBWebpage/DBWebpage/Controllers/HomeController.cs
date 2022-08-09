@@ -17,9 +17,12 @@ namespace DBWebpage.Controllers
 
             using (ForeningEntities entity = new ForeningEntities())
             {
+                personList = (from r in entity.Person
+                              // where r.age == 18
+                              select r).ToList();
 
             }
-            return View();
+            return View(personList);
         }
 
         public ActionResult About()
