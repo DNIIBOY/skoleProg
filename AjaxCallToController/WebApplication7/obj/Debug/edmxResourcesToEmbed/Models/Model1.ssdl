@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HundeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="HundeEjer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EjerNavn" Type="nvarchar" MaxLength="50" />
+    <Property Name="EjerAdresse" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HundeTabel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Navn" Type="nvarchar" MaxLength="50" />
+    <Property Name="Alder" Type="nchar" MaxLength="10" />
+    <Property Name="EjerId" Type="int" />
+  </EntityType>
+  <Association Name="FK_HundeTabel_HundeEjer">
+    <End Role="HundeEjer" Type="Self.HundeEjer" Multiplicity="0..1" />
+    <End Role="HundeTabel" Type="Self.HundeTabel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HundeEjer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HundeTabel">
+        <PropertyRef Name="EjerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HundeDBModelStoreContainer">
+    <EntitySet Name="HundeEjer" EntityType="Self.HundeEjer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HundeTabel" EntityType="Self.HundeTabel" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_HundeTabel_HundeEjer" Association="Self.FK_HundeTabel_HundeEjer">
+      <End Role="HundeEjer" EntitySet="HundeEjer" />
+      <End Role="HundeTabel" EntitySet="HundeTabel" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

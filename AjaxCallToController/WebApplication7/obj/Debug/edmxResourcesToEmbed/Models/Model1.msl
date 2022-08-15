@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HundeDBModelStoreContainer" CdmEntityContainer="HundeDBEntities">
+    <EntitySetMapping Name="HundeEjer">
+      <EntityTypeMapping TypeName="HundeDBModel.HundeEjer">
+        <MappingFragment StoreEntitySet="HundeEjer">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EjerNavn" ColumnName="EjerNavn" />
+          <ScalarProperty Name="EjerAdresse" ColumnName="EjerAdresse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HundeTabel">
+      <EntityTypeMapping TypeName="HundeDBModel.HundeTabel">
+        <MappingFragment StoreEntitySet="HundeTabel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Navn" ColumnName="Navn" />
+          <ScalarProperty Name="Alder" ColumnName="Alder" />
+          <ScalarProperty Name="EjerId" ColumnName="EjerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

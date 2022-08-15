@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HundeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="HundeEjer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EjerNavn" Type="nvarchar" MaxLength="50" />
+          <Property Name="EjerAdresse" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="HundeTabel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Navn" Type="nvarchar" MaxLength="50" />
+          <Property Name="Alder" Type="nchar" MaxLength="10" />
+          <Property Name="EjerId" Type="int" />
+        </EntityType>
+        <Association Name="FK_HundeTabel_HundeEjer">
+          <End Role="HundeEjer" Type="Self.HundeEjer" Multiplicity="0..1" />
+          <End Role="HundeTabel" Type="Self.HundeTabel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HundeEjer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HundeTabel">
+              <PropertyRef Name="EjerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HundeDBModelStoreContainer">
+          <EntitySet Name="HundeEjer" EntityType="Self.HundeEjer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HundeTabel" EntityType="Self.HundeTabel" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_HundeTabel_HundeEjer" Association="Self.FK_HundeTabel_HundeEjer">
+            <End Role="HundeEjer" EntitySet="HundeEjer" />
+            <End Role="HundeTabel" EntitySet="HundeTabel" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HundeDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="HundeEjer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EjerNavn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EjerAdresse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HundeTabel" Relationship="Self.FK_HundeTabel_HundeEjer" FromRole="HundeEjer" ToRole="HundeTabel" />
+        </EntityType>
+        <EntityType Name="HundeTabel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Navn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Alder" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="EjerId" Type="Int32" />
+          <NavigationProperty Name="HundeEjer" Relationship="Self.FK_HundeTabel_HundeEjer" FromRole="HundeTabel" ToRole="HundeEjer" />
+        </EntityType>
+        <Association Name="FK_HundeTabel_HundeEjer">
+          <End Role="HundeEjer" Type="Self.HundeEjer" Multiplicity="0..1" />
+          <End Role="HundeTabel" Type="Self.HundeTabel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HundeEjer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HundeTabel">
+              <PropertyRef Name="EjerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HundeDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="HundeEjer" EntityType="Self.HundeEjer" />
+          <EntitySet Name="HundeTabel" EntityType="Self.HundeTabel" />
+          <AssociationSet Name="FK_HundeTabel_HundeEjer" Association="Self.FK_HundeTabel_HundeEjer">
+            <End Role="HundeEjer" EntitySet="HundeEjer" />
+            <End Role="HundeTabel" EntitySet="HundeTabel" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HundeDBModelStoreContainer" CdmEntityContainer="HundeDBEntities">
+          <EntitySetMapping Name="HundeEjer">
+            <EntityTypeMapping TypeName="HundeDBModel.HundeEjer">
+              <MappingFragment StoreEntitySet="HundeEjer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EjerNavn" ColumnName="EjerNavn" />
+                <ScalarProperty Name="EjerAdresse" ColumnName="EjerAdresse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HundeTabel">
+            <EntityTypeMapping TypeName="HundeDBModel.HundeTabel">
+              <MappingFragment StoreEntitySet="HundeTabel">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Navn" ColumnName="Navn" />
+                <ScalarProperty Name="Alder" ColumnName="Alder" />
+                <ScalarProperty Name="EjerId" ColumnName="EjerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
