@@ -33,4 +33,5 @@ function draw(){
 			rect(17+j*100, start, 70, heights[i][j]);
 		}
 	}
+>>>>>>> 4bf2a6d13909d854b4521e2ecc921057dd05dc3e
 }
