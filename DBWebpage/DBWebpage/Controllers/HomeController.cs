@@ -11,18 +11,24 @@ namespace DBWebpage.Controllers
     {
         public ActionResult Index()
         {
-            List < Person > personList = new List<Person>();
-            List < Forening > foreningList = new List<Forening>();
+            return View();
+        }
 
-
+        public JsonResult AjaxMethod(string name)
+        {
+            Person person = new Person();
             using (ForeningEntities entity = new ForeningEntities())
             {
-                personList = (from r in entity.Person
-                              // where r.age == 18
-                              select r).ToList();
-
+                person = (from r in entity.Person
+                    where r.firstName == name
+                    select r).FirstOrDefault();
             }
-            return View(personList);
+
+            Person new_person = new Person();
+            new_person.firstName = person.firstName;
+            new_person.lastName = person.lastName;
+            new_person.age = person.age;
+            return (Json(new_person));
         }
 
         public ActionResult About()

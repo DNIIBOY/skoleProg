@@ -20,7 +20,7 @@ namespace DBWebpage.Models
         public Nullable<int> age { get; set; }
         public Nullable<int> MemberShipID { get; set; }
         public Nullable<int> CityID { get; set; }
-    
+        
         public virtual City City { get; set; }
         public virtual Membership Membership { get; set; }
     }
