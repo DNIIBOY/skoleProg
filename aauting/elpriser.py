@@ -36,20 +36,39 @@ def parse_date(date: str) -> str:
 
 
 def consec():
-    hour_count = int(input("How many consecutive hours to be on?: "))
+    try:
+        hour_count = int(input("How many consecutive hours to be on?: "))
+    except ValueError:
+        print("Invalid!")
+        return
     cheapest_price, cheapest_time = find_cheapest_consecutive(hour_count, clean_data)
     cheapest_time = clean_data[cheapest_time]["HourDK"]
     print(f"Cheapest time : {parse_date(cheapest_time)}\nCheapest price: {cheapest_price}")
 
 
 def random():
-    hour_count = int(input("How many random hours to be on?: "))
+    try:
+        hour_count = int(input("How many random hours to be on?: "))
+    except ValueError:
+        print("Invalid!")
+        return
     cheapest_prices = find_cheapest_random(hour_count, clean_data)
     print("---Cheapest Hours---")
     for p in cheapest_prices:
         print(parse_date(p["HourDK"]))
 
 
+def main():
+    option = input("(C)onsecutive or (R)andom?: ")
+    match option.lower():
+        case "c":
+            consec()
+        case "r":
+            random()
+        case _:
+            return main()
+
+
 if __name__ == "__main__":
-    random()
+    main()
 
