@@ -43,7 +43,7 @@ def consec():
         return
     cheapest_price, cheapest_time = find_cheapest_consecutive(hour_count, clean_data)
     cheapest_time = clean_data[cheapest_time]["HourDK"]
-    print(f"Cheapest time : {parse_date(cheapest_time)}\nCheapest price: {cheapest_price}")
+    print(f"Cheapest time : {parse_date(cheapest_time)}\nCheapest price: {round(cheapest_price, 2)},-")
 
 
 def random():
@@ -53,9 +53,12 @@ def random():
         print("Invalid!")
         return
     cheapest_prices = find_cheapest_random(hour_count, clean_data)
+    price = 0
     print("---Cheapest Hours---")
     for p in cheapest_prices:
         print(parse_date(p["HourDK"]))
+        price += p["SpotPriceDKK"]
+    print(f"Price: {round(price, 2)},-")
 
 
 def main():
