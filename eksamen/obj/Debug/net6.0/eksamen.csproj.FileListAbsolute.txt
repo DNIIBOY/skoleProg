@@ -1,0 +1,15 @@
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\obj\Debug\net6.0\eksamen.csproj.AssemblyReference.cache
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\obj\Debug\net6.0\eksamen.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\obj\Debug\net6.0\eksamen.AssemblyInfoInputs.cache
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\obj\Debug\net6.0\eksamen.AssemblyInfo.cs
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\obj\Debug\net6.0\eksamen.csproj.CoreCompileInputs.cache
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\bin\Debug\net6.0\eksamen.exe
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\bin\Debug\net6.0\eksamen.deps.json
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\bin\Debug\net6.0\eksamen.runtimeconfig.json
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\bin\Debug\net6.0\eksamen.dll
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\bin\Debug\net6.0\eksamen.pdb
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\obj\Debug\net6.0\eksamen.dll
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\obj\Debug\net6.0\refint\eksamen.dll
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\obj\Debug\net6.0\eksamen.pdb
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\obj\Debug\net6.0\eksamen.genruntimeconfig.cache
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\obj\Debug\net6.0\ref\eksamen.dll

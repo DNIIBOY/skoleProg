@@ -1,0 +1,5 @@
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\bin\Debug\net6.0\publish\eksamen.exe
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\bin\Debug\net6.0\publish\eksamen.dll
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\bin\Debug\net6.0\publish\eksamen.deps.json
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\bin\Debug\net6.0\publish\eksamen.runtimeconfig.json
+C:\Users\danie\Desktop\programmering\skoleProg\eksamen\bin\Debug\net6.0\publish\eksamen.pdb
